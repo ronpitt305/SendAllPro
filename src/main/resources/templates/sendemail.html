@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/sendEmail/{id}(id=${emailUser.id})}" th:object="${emailUser}" method="post">
+    <table>
+        <tr>
+        <th>Select email user</th>
+        </tr>
+        <td>
+           <select>
+               <option th:each="user:${users}"
+                       th:text="${user.username}"
+                       th:value="${user.id}"
+               ></option>
+           </select>
+        </td>
+        <td>
+            <input type="submit" value="Send Email"/>
+        </td>
+    </table>
+</form>
+</body>
+</html>

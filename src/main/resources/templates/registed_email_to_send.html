@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Page</title>
+</head>
+<body>
+    <form action="@{/emailSet}" th:object="${sendEmail}" method="post">
+        <table>
+            <td>
+                <textarea rows="4" cols="80" th:field="*{message}">
+                    Enter text here!
+                </textarea>
+            </td>
+            <td><input type="submit" value="Enter"/></td>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Page</title>
+</head>
+<body>
+<h1>Add contacts</h1>
+    <form th:action="@{/addContacts}" th:object="${contact}" method="post">
+        <table>
+            <tr>
+                <td><label><b>Contact #1:</b></label></td>
+                <td><label>Name :</label></td>
+                <td><input type="text" th:field="*{contactName}"/></td>
+                <td><label>Email :</label></td>
+                <td><input type="text" th:field="*{contactEmail}"/></td>
+            </tr>
+            <td><input type="submit" value="Add to DB"/></td>
+        </table>
+    </form>
+</body>
+</html>
